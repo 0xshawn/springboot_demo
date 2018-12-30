@@ -1,9 +1,6 @@
 package com.wayknew.demo.user;
 
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
@@ -15,33 +12,22 @@ public class UserController {
     private UserBO userBO;
 
     @RequestMapping(value = "/user", method = RequestMethod.POST)
-    public User createUser() {
-//        try {
-        return userBO.create(
-                "Shawn",
-                "186000000",
-                (byte) 1);
-//        } catch (Exception e) {
-//            System.out.println(e.toString());
-//            return null;
-//        }
+    public UserResponseDTO createUser(@RequestBody UserRequestDTO body) {
+        try {
+            User user = userBO.create(body.getName(), body.getPhone(), (byte) body.getGender());
+            return UserFactory.successResponse(user);
+        } catch (Exception e) {
+            return UserFactory.errorResponse(1, e.toString());
+        }
     }
 
     @RequestMapping(value = "/user/{userId}", method = RequestMethod.GET)
-    public UserDTO getUserById(@PathVariable("userId") Long userId) {
+    public UserResponseDTO getUserById(@PathVariable("userId") Long userId) {
         try {
             User user = userBO.getById(userId);
-            UserDTO userDTO = new UserDTO();
-            userDTO.setId(user.getId());
-            userDTO.setName(user.getName());
-            userDTO.setGender(user.getGender());
-            userDTO.setPhone(user.getPhone());
-            userDTO.setCreatedAt(user.getCreatedAt());
-            userDTO.setUpdatedAt(user.getUpdatedAt());
-
-            return userDTO;
+            return UserFactory.successResponse(user);
         } catch (Exception e) {
-            return null;
+            return UserFactory.errorResponse(2, e.toString());
         }
     }
 }
