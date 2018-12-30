@@ -24,7 +24,7 @@ public class UserBO {
         user.setPhone(phone);
         user.setGender(gender);
 
-        return userDAO.save(user);
+        return userDAO.saveAndFlush(user);
     }
 
     /**
