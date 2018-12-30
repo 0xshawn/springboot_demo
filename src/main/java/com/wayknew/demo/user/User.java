@@ -1,5 +1,7 @@
 package com.wayknew.demo.user;
 
+import com.alibaba.fastjson.annotation.JSONField;
+
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,7 +15,9 @@ public class User {
     private String name;
     private String phone;
     private Byte gender;
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private Timestamp createdAt;
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private Timestamp updatedAt;
 
     @Id

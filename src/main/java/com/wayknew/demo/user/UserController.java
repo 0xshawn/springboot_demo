@@ -15,25 +15,33 @@ public class UserController {
     private UserBO userBO;
 
     @RequestMapping(value = "/user", method = RequestMethod.POST)
-    public String createUser() {
-        try {
-            User user = userBO.create(
-                    "Shawn",
-                    "186000000",
-                    (byte) 1);
-            return user.toString();
-        } catch (Exception e) {
-            return "Error when create";
-        }
+    public User createUser() {
+//        try {
+        return userBO.create(
+                "Shawn",
+                "186000000",
+                (byte) 1);
+//        } catch (Exception e) {
+//            System.out.println(e.toString());
+//            return null;
+//        }
     }
 
     @RequestMapping(value = "/user/{userId}", method = RequestMethod.GET)
-    public String getUserById(@PathVariable("userId") Long userId) {
+    public UserDTO getUserById(@PathVariable("userId") Long userId) {
         try {
             User user = userBO.getById(userId);
-            return user.toString();
+            UserDTO userDTO = new UserDTO();
+            userDTO.setId(user.getId());
+            userDTO.setName(user.getName());
+            userDTO.setGender(user.getGender());
+            userDTO.setPhone(user.getPhone());
+            userDTO.setCreatedAt(user.getCreatedAt());
+            userDTO.setUpdatedAt(user.getUpdatedAt());
+
+            return userDTO;
         } catch (Exception e) {
-            return "Error when get";
+            return null;
         }
     }
 }

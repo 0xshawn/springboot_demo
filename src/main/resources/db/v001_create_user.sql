@@ -1,3 +1,7 @@
+-- create db
+create database demo default character set utf8mb4 collate utf8mb4_unicode_ci;
+
+-- create table user
 CREATE TABLE IF NOT EXISTS `user` (
   `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(255) NOT NULL COMMENT '用户名称',

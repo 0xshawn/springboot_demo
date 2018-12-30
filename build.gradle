@@ -29,6 +29,7 @@ dependencies {
     implementation('org.springframework.boot:spring-boot-starter-data-jpa')
     implementation('org.springframework.boot:spring-boot-starter-jdbc')
     implementation('org.springframework.boot:spring-boot-starter-web')
+    implementation('com.alibaba:fastjson:1.2.47')
     runtimeOnly('org.springframework.boot:spring-boot-devtools')
     runtimeOnly('mysql:mysql-connector-java')
     testImplementation('org.springframework.boot:spring-boot-starter-test')
