@@ -1,4 +1,4 @@
-package com.wayknew.demo.user;
+package com.wayknew.demo.user.request;
 
 public class UserRequestDTO {
 

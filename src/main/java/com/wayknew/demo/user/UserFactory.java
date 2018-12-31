@@ -1,8 +1,13 @@
 package com.wayknew.demo.user;
 
+import com.wayknew.demo.user.response.UserResponseDTO;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class UserFactory {
 
-    public static UserDTO toUserDTO(User user) {
+    static UserDTO toUserDTO(User user) {
         UserDTO userDTO = new UserDTO();
         userDTO.setId(user.getId());
         userDTO.setName(user.getName());
@@ -13,7 +18,14 @@ public class UserFactory {
         return userDTO;
     }
 
-    public static UserResponseDTO successResponse(User user) {
+    static UserResponseDTO successResponse() {
+        UserResponseDTO res = new UserResponseDTO();
+        res.setCode(0);
+        res.setMessage("success");
+        return res;
+    }
+
+    static UserResponseDTO successResponse(User user) {
         UserDTO userDTO = toUserDTO(user);
         UserResponseDTO res = new UserResponseDTO();
         res.setCode(0);
@@ -22,7 +34,19 @@ public class UserFactory {
         return res;
     }
 
-    public static UserResponseDTO errorResponse(Integer code, String message) {
+    static UserResponseDTO successResponse(List<User> users) {
+        List<UserDTO> userDTOList = new ArrayList<>();
+        users.forEach(user -> {
+            userDTOList.add(toUserDTO(user));
+        });
+        UserResponseDTO res = new UserResponseDTO();
+        res.setCode(0);
+        res.setMessage("success");
+        res.setUsers(userDTOList);
+        return res;
+    }
+
+    static UserResponseDTO errorResponse(Integer code, String message) {
         UserResponseDTO res = new UserResponseDTO();
         res.setCode(code);
         res.setMessage(message);

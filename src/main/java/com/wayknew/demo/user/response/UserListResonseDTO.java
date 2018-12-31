@@ -1,9 +1,13 @@
-package com.wayknew.demo.user;
+package com.wayknew.demo.user.response;
 
-public class UserResponseDTO {
+import com.wayknew.demo.user.UserDTO;
+
+import java.util.List;
+
+public class UserListResonseDTO {
     private Integer code;
     private String message;
-    private UserDTO user;
+    private List<UserDTO> users;
 
     public Integer getCode() {
         return code;
@@ -21,11 +25,11 @@ public class UserResponseDTO {
         this.message = message;
     }
 
-    public UserDTO getUser() {
-        return user;
+    public List<UserDTO> getUsers() {
+        return users;
     }
 
-    public void setUser(UserDTO user) {
-        this.user = user;
+    public void setUsers(List<UserDTO> users) {
+        this.users = users;
     }
 }
