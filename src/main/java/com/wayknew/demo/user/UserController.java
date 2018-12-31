@@ -30,4 +30,48 @@ public class UserController {
             return UserFactory.errorResponse(2, e.toString());
         }
     }
+
+
+ /*   @RequestMapping(value = "/delete",method = RequestMethod.DELETE)
+    public UserResponseDTO delete(@PathVariable("userId") Long userId) {
+        try {
+            User user = userBO.delete(Long userId);
+            return UserFactory.successResponse(user);
+        } catch (Exception e) {
+            return UserFactory.errorResponse(2, e.toString());
+        }
+    }*/
+
+/*
+   @RequestMapping(value = "/update",method = RequestMethod.PUT)
+    public UserResponseDTO update(@RequestBody UserRequestDTO body) {
+        try {
+            User user = userBO.update(body.getName(), body.getPhone(), (byte) body.getGender());
+            return UserFactory.successResponse(user);
+        } catch (Exception e) {
+            return UserFactory.errorResponse(2, e.toString());
+        }
+    }*/
+
+    @RequestMapping(value = "/deletewhere/{userId}" ,method = RequestMethod.GET)
+    public UserResponseDTO deleteuser(@PathVariable("userID") Long userId) {
+        try {
+            User user = userBO.deleteuser(userId);
+            return UserFactory.successResponse(user);
+        } catch (Exception e) {
+            return UserFactory.errorResponse(2, e.toString());
+        }
+    }
+ /*   public String delete(){
+        User user = new UserBO().delete();
+        user.setId(2L);
+        UserDAO.delete(user);
+        return "执行了删除操作";
+
+    }*/
+
+
+
+
 }
+
