@@ -37,7 +37,7 @@ public class UserBO {
      * @return
      */
     User getById(Long userId) {
-        return userDAO.getOne(userId);
+        return userDAO.findUserById(userId);
     }
 
     List<User> getUserList() {
@@ -45,7 +45,7 @@ public class UserBO {
     }
 
     User updateUser(Long userId, UserRequestDTO body) {
-        User user = userDAO.getOne(userId);
+        User user = userDAO.findUserById(userId);
 
         if (body.getPhone() != null) {
             user.setPhone(body.getPhone());
@@ -62,7 +62,7 @@ public class UserBO {
     }
 
     void deleteUser(Long userId) {
-        User user = userDAO.getOne(userId);
+        User user = userDAO.findUserById(userId);
         if (user != null) {
             userDAO.delete(user);
         }
