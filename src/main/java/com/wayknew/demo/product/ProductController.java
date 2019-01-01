@@ -10,20 +10,19 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 
 @RestController
-@RequestMapping(value = "/test/v1")
+@RequestMapping(value = "/api/v1")
 public class ProductController {
 
     @Resource
     private ProductBO productBO;
+
     @RequestMapping(value = "/product", method = RequestMethod.POST)
     public ProductResponseDTO createUser(@RequestBody ProductQuesDTO body) {
         try {
-            Product product = productBO.create(body.getName(), body.getDescription(), (Long) body.getPrice());
+            Product product = productBO.create(body.getName(), body.getDescription(), body.getPrice());
             return ProductFactory.successResponse(product);
         } catch (Exception e) {
             return ProductFactory.errorResponse(1, e.toString());
         }
     }
-
-
 }

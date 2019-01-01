@@ -1,13 +1,12 @@
 package com.wayknew.demo.product;
 
-import com.wayknew.demo.user.request.UserRequestDTO;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.List;
 
 @Service
 public class ProductBO {
+
     @Resource
     private ProductDAO productDAO;
 
