@@ -7,7 +7,7 @@ import java.util.Objects;
 
 @Entity
 public class User {
-    private long id;
+    private long userId;
     private String name;
     private String phone;
     private Byte gender;
@@ -16,13 +16,13 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    public long getId() {
-        return id;
+    @Column(name = "user_id")
+    public long getUserId() {
+        return userId;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setUserId(long userId) {
+        this.userId = userId;
     }
 
     @Basic
@@ -80,7 +80,7 @@ public class User {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return id == user.id &&
+        return userId == user.userId &&
                 Objects.equals(name, user.name) &&
                 Objects.equals(phone, user.phone) &&
                 Objects.equals(gender, user.gender) &&
@@ -90,12 +90,12 @@ public class User {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, phone, gender, createdAt, updatedAt);
+        return Objects.hash(userId, name, phone, gender, createdAt, updatedAt);
     }
 
     @Override
     public String toString() {
-        return "Id: " + this.id +
+        return "Id: " + this.userId +
                 ", Name: " + this.name +
                 ", Phone: " + this.phone +
                 ", Gender: " + this.gender;

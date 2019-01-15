@@ -11,7 +11,7 @@ public class ProductFactory {
 
     static ProductDTO toProductDTO(Product product) {
         ProductDTO productDTO = new ProductDTO();
-        productDTO.setId(product.getId());
+        productDTO.setProductId(product.getProductId());
         productDTO.setName(product.getName());
         productDTO.setDescription(product.getDescription());
         productDTO.setPrice(product.getPrice());

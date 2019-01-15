@@ -6,7 +6,7 @@ import java.sql.Timestamp;
 
 public class ProductDTO {
 
-    private long id;
+    private long productId;
     private String name;
     private String description;
     private Long price;
@@ -17,12 +17,12 @@ public class ProductDTO {
 
 
 
-    public long getId() {
-        return id;
+    public long getProductId() {
+        return productId;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setProductId(long productId) {
+        this.productId = productId;
     }
     public String getName() {
         return name;

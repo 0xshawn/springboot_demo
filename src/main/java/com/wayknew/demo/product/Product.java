@@ -6,7 +6,7 @@ import java.util.Objects;
 
 @Entity
 public class Product {
-    private long id;
+    private long productId;
     private String name;
     private String description;
     private Long price;
@@ -15,13 +15,13 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    public long getId() {
-        return id;
+    @Column(name = "product_id")
+    public long getProductId() {
+        return productId;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setProductId(long productId) {
+        this.productId = productId;
     }
 
     @Basic
@@ -79,7 +79,7 @@ public class Product {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Product user = (Product) o;
-        return id == user.id &&
+        return productId == user.productId &&
                 Objects.equals(name, user.name) &&
                 Objects.equals(description, user.description) &&
                 Objects.equals(price, user.price) &&
@@ -89,6 +89,6 @@ public class Product {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, price, createdAt, updatedAt);
+        return Objects.hash(productId, name, description, price, createdAt, updatedAt);
     }
 }

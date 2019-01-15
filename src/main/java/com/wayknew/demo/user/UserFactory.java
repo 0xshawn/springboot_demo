@@ -9,7 +9,7 @@ public class UserFactory {
 
     static UserDTO toUserDTO(User user) {
         UserDTO userDTO = new UserDTO();
-        userDTO.setId(user.getId());
+        userDTO.setUserId(user.getUserId());
         userDTO.setName(user.getName());
         userDTO.setGender(user.getGender());
         userDTO.setPhone(user.getPhone());

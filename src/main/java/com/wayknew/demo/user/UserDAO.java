@@ -6,7 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public interface UserDAO extends JpaRepository<User, Long> {
 
-    User findByPhone(Long id);
+ /*   User findByPhone(Long userId);*/
 
-    User findUserById(Long id);
+    User findUserByUserId(Long userId);
 }

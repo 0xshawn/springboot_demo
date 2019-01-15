@@ -7,5 +7,9 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public interface ProductDAO extends JpaRepository<Product, Long> {
 
-    Product findProductById(Long id);
+    Product findProductByProductId(Long productId);
+
+    Product findByPrice(Long productId);
+
+
 }
