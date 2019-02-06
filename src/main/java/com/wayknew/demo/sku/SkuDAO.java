@@ -1,9 +1,10 @@
-package com.wayknew.demo.cart;
+package com.wayknew.demo.sku;
+
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.transaction.annotation.Transactional;
 
 @Transactional
-public interface CartDAO extends JpaRepository<Cart, Long> {
-    Cart findCartByCartId(Long cardId);
+public interface SkuDAO extends JpaRepository<Sku, Long> {
+    Sku findBySkuId(Long skuId);
 }

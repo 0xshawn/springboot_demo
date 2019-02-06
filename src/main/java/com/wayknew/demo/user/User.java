@@ -1,6 +1,5 @@
 package com.wayknew.demo.user;
 
-
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Objects;
@@ -11,6 +10,7 @@ public class User {
     private String name;
     private String phone;
     private Byte gender;
+    private String password;
     private Timestamp createdAt;
     private Timestamp updatedAt;
 
@@ -56,6 +56,16 @@ public class User {
     }
 
     @Basic
+    @Column(name = "password")
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    @Basic
     @Column(name = "created_at")
     public Timestamp getCreatedAt() {
         return createdAt;
@@ -84,20 +94,13 @@ public class User {
                 Objects.equals(name, user.name) &&
                 Objects.equals(phone, user.phone) &&
                 Objects.equals(gender, user.gender) &&
+                Objects.equals(password, user.password) &&
                 Objects.equals(createdAt, user.createdAt) &&
                 Objects.equals(updatedAt, user.updatedAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(userId, name, phone, gender, createdAt, updatedAt);
-    }
-
-    @Override
-    public String toString() {
-        return "Id: " + this.userId +
-                ", Name: " + this.name +
-                ", Phone: " + this.phone +
-                ", Gender: " + this.gender;
+        return Objects.hash(userId, name, phone, gender, password, createdAt, updatedAt);
     }
 }

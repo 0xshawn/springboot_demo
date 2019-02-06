@@ -1,9 +1,9 @@
-package com.wayknew.demo.cart;
+package com.wayknew.demo.order;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.transaction.annotation.Transactional;
 
 @Transactional
-public interface CartDAO extends JpaRepository<Cart, Long> {
-    Cart findCartByCartId(Long cardId);
+public interface OrderDAO extends JpaRepository<Order,Long> {
+    Order findByOrderId(Long orderId);
 }

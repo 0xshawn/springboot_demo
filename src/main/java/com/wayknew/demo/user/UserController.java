@@ -17,7 +17,7 @@ public class UserController {
     @RequestMapping(value = "/user", method = RequestMethod.POST)
     public UserResponseDTO createUser(@RequestBody UserRequestDTO body) {
         try {
-            User user = userBO.create(body.getName(), body.getPhone(), (byte) body.getGender());
+            User user = userBO.create(body.getName(), body.getPhone(), (byte) body.getGender(),body.getPassword());
             return UserFactory.successResponse(user);
         } catch (Exception e) {
             return UserFactory.errorResponse(1, e.toString());

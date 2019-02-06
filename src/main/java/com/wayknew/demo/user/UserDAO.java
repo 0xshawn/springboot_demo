@@ -9,4 +9,5 @@ public interface UserDAO extends JpaRepository<User, Long> {
  /*   User findByPhone(Long userId);*/
 
     User findUserByUserId(Long userId);
+
 }

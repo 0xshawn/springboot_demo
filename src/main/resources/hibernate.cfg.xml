@@ -9,7 +9,13 @@
       <mapping class="com.wayknew.demo.user.User"/>
     <mapping class="com.wayknew.demo.product.Product"/>
     <mapping class="com.wayknew.demo.cart.Cart"/>
-    <!-- <property name="connection.username"/> -->
+      <mapping class="com.wayknew.demo.order.Order"/>
+      <mapping class="com.wayknew.demo.address.Address"/>
+      <mapping class="com.wayknew.demo.login.Login"/>
+      <mapping class="com.wayknew.demo.sku.Sku"/>
+      <mapping class="com.wayknew.demo.order_sku.OrderSku"/>
+      <mapping class="com.wayknew.demo.payment.Payment"/>
+      <!-- <property name="connection.username"/> -->
     <!-- <property name="connection.password"/> -->
 
     <!-- DB schema will be updated if needed -->

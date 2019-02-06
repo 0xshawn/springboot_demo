@@ -1,9 +1,11 @@
-package com.wayknew.demo.cart;
+package com.wayknew.demo.login;
+
+
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.transaction.annotation.Transactional;
 
 @Transactional
-public interface CartDAO extends JpaRepository<Cart, Long> {
-    Cart findCartByCartId(Long cardId);
+public interface LoginDAO extends JpaRepository<Login, Long> {
+    Login findByLoginId(Long loginId);
 }

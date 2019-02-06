@@ -13,6 +13,7 @@ public class UserFactory {
         userDTO.setName(user.getName());
         userDTO.setGender(user.getGender());
         userDTO.setPhone(user.getPhone());
+        userDTO.setPassword(user.getPassword());
         userDTO.setCreatedAt(user.getCreatedAt());
         userDTO.setUpdatedAt(user.getUpdatedAt());
         return userDTO;

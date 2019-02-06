@@ -21,11 +21,12 @@ public class UserBO {
      * @param gender
      * @return
      */
-    User create(String name, String phone, Byte gender) {
+    User create(String name, String phone, Byte gender,String password) {
         User user = new User();
         user.setName(name);
         user.setPhone(phone);
         user.setGender(gender);
+        user.setPassword(password);
 
         return userDAO.save(user);
     }
@@ -56,6 +57,10 @@ public class UserBO {
         if (body.getGender() != null) {
             user.setGender(body.getGender());
         }
+        if (body.getPassword() != null) {
+            user.setPassword(body.getPassword());
+        }
+
 
         user = userDAO.save(user);
         return user;
