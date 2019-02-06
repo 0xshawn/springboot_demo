@@ -5,21 +5,22 @@ import com.alibaba.fastjson.annotation.JSONField;
 import java.sql.Timestamp;
 
 public class UserDTO {
-    private long id;
+    private long userId;
     private String name;
     private String phone;
     private Byte gender;
+    private String password;
     @JSONField(format = "yyyy-MM-dd HH:mm")
     private Timestamp createdAt;
     @JSONField(format = "yyyy-MM-dd HH:mm")
     private Timestamp updatedAt;
 
-    public long getId() {
-        return id;
+    public long getUserId() {
+        return userId;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setUserId(long userId) {
+        this.userId = userId;
     }
 
     public String getName() {
@@ -44,6 +45,14 @@ public class UserDTO {
 
     public void setGender(Byte gender) {
         this.gender = gender;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public Timestamp getCreatedAt() {

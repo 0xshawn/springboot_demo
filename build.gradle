@@ -30,6 +30,7 @@ dependencies {
     implementation('org.springframework.boot:spring-boot-starter-jdbc')
     implementation('org.springframework.boot:spring-boot-starter-web')
     implementation('com.alibaba:fastjson:1.2.47')
+    implementation ('com.alibaba:druid:1.1.12')
     runtimeOnly('org.springframework.boot:spring-boot-devtools')
     runtimeOnly('mysql:mysql-connector-java')
     testImplementation('org.springframework.boot:spring-boot-starter-test')

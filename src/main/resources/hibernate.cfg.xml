@@ -7,6 +7,14 @@
     <property name="connection.url">jdbc:mysql://localhost:3306/demo</property>
     <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
       <mapping class="com.wayknew.demo.user.User"/>
+    <mapping class="com.wayknew.demo.product.Product"/>
+    <mapping class="com.wayknew.demo.cart.Cart"/>
+      <mapping class="com.wayknew.demo.order.Order"/>
+      <mapping class="com.wayknew.demo.address.Address"/>
+      <mapping class="com.wayknew.demo.login.Login"/>
+      <mapping class="com.wayknew.demo.sku.Sku"/>
+      <mapping class="com.wayknew.demo.order_sku.OrderSku"/>
+      <mapping class="com.wayknew.demo.payment.Payment"/>
       <!-- <property name="connection.username"/> -->
     <!-- <property name="connection.password"/> -->
 

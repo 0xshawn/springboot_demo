@@ -1,28 +1,28 @@
 package com.wayknew.demo.user;
 
-
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
 public class User {
-    private long id;
+    private long userId;
     private String name;
     private String phone;
     private Byte gender;
+    private String password;
     private Timestamp createdAt;
     private Timestamp updatedAt;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    public long getId() {
-        return id;
+    @Column(name = "user_id")
+    public long getUserId() {
+        return userId;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setUserId(long userId) {
+        this.userId = userId;
     }
 
     @Basic
@@ -56,6 +56,16 @@ public class User {
     }
 
     @Basic
+    @Column(name = "password")
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    @Basic
     @Column(name = "created_at")
     public Timestamp getCreatedAt() {
         return createdAt;
@@ -80,24 +90,17 @@ public class User {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return id == user.id &&
+        return userId == user.userId &&
                 Objects.equals(name, user.name) &&
                 Objects.equals(phone, user.phone) &&
                 Objects.equals(gender, user.gender) &&
+                Objects.equals(password, user.password) &&
                 Objects.equals(createdAt, user.createdAt) &&
                 Objects.equals(updatedAt, user.updatedAt);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, phone, gender, createdAt, updatedAt);
-    }
-
-    @Override
-    public String toString() {
-        return "Id: " + this.id +
-                ", Name: " + this.name +
-                ", Phone: " + this.phone +
-                ", Gender: " + this.gender;
+        return Objects.hash(userId, name, phone, gender, password, createdAt, updatedAt);
     }
 }

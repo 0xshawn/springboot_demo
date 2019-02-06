@@ -5,6 +5,7 @@ public class UserRequestDTO {
     private String name;
     private String phone;
     private Byte gender;
+    private String password;
 
     public String getName() {
         return name;
@@ -29,4 +30,15 @@ public class UserRequestDTO {
     public void setGender(Byte gender) {
         this.gender = gender;
     }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+
+
 }
